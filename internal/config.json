@@ -1,0 +1,6 @@
+{
+    "DB_HOST": "localhost",
+    "DB_USERNAME": "teng",
+    "DB_PASSWORD": "yuqi",
+    "DB_NAME": "library"
+}
