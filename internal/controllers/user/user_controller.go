@@ -1,20 +1,18 @@
-package user 
+package user
 
 import (
-	"../../models"
+	"../../models/users"
 	"github.com/gin-gonic/gin"
-	"strconv"
 )
 
 type Controller struct{}
 
-func (pc Controller) ShowUserInfo(c *gin.Context) {
-	id := c.Query("id")
+func (pc Controller) GetUserInfoById(c *gin.Context) {
+	id := c.Param("id")
 
 	if len(id) == 0 {
-		c.JSON(422, "v2: Please input easyid to query user info.")
+		c.JSON(422, "Please input id to get user info.")
 	} else {
-		id, _ := strconv.Atoi(c.Query("id"))
 		userInfo := userdata.GetUserById(id)
 		c.JSON(200, userInfo)
 	}

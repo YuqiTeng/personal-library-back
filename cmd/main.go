@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	handler.Init()
+	handler.InitRouter()
 }
