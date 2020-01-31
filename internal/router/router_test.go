@@ -1,4 +1,4 @@
-package handler
+package router
 
 import (
 	"net/http"
@@ -16,14 +16,4 @@ func TestStartRouterGetRoot(t *testing.T) {
 	router.ServeHTTP(w, req)
 
 	assert.Equal(t, 200, w.Code)
-}
-
-func TestStartRouterGetUsageDataWithoutParam(t *testing.T) {
-	router := StartRouter()
-
-	w := httptest.NewRecorder()
-	req, _ := http.NewRequest("GET", "/usageData", nil)
-	router.ServeHTTP(w, req)
-
-	assert.Equal(t, 422, w.Code)
 }

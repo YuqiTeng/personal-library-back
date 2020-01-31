@@ -1,7 +1,8 @@
 package userdata
 
 import (
-	"../../db"
+	"github.com/personal-library-back/internal/models/db"
+	"strconv"
 )
 
 type Users struct {
@@ -21,8 +22,9 @@ func GetUserById(id string) Users {
 
 	defer db.Close()
 
+	intId, _ := strconv.Atoi(id)
 	libraryDb.SingularTable(true)
-	libraryDb.Select("id, username, email").First(&user, "id = ?", id)
+	libraryDb.Select("id, username, email").First(&user, "id = ?", intId)
 
 	return user
 }

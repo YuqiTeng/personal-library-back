@@ -1,8 +1,8 @@
-package handler
+package router
 
 import (
-	"../controllers/common"
-	"../controllers/user"
+	"github.com/personal-library-back/internal/controllers/common"
+	"github.com/personal-library-back/internal/controllers/user"
 	"github.com/gin-gonic/gin"
 )
 
@@ -22,6 +22,9 @@ func StartRouter() *gin.Engine {
 
 	router.GET("/", commonController.ShowIndex)
 	router.GET("/userInfo/:id", userController.GetUserInfoById)
+	router.GET("/userInfo/", userController.GetUserInfoById)
+
+	// Login functions
 	router.POST("/login", commonController.Login)
 
 	return router

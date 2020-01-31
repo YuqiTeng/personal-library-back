@@ -1,9 +1,9 @@
 package main
 
 import (
-	"../internal/handler"
+	"github.com/personal-library-back/internal/router"
 )
 
 func main() {
-	handler.InitRouter()
+	router.InitRouter()
 }

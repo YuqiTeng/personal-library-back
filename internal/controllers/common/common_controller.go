@@ -2,7 +2,7 @@ package common
 
 import (
 	"github.com/gin-gonic/gin"
-	"../../models/users"
+	"github.com/personal-library-back/internal/models/users"
 )
 
 type Controller struct{}
@@ -26,6 +26,7 @@ func (pc Controller) Login(c *gin.Context) {
 		c.JSON(403, "Password wrong")
 	}
 }
+
 func (pc Controller) ShowIndex(c *gin.Context) {
 	c.JSON(200, "Welcome to personal library project")
 }
